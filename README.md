@@ -1,8 +1,8 @@
-###Post Management API
-#An API for managing posts built with FastAPI that uses Supabase as a database and a file storage server.
+### Post Management API
+# An API for managing posts built with FastAPI that uses Supabase as a database and a file storage server.
 
-##Key Features
-#Create Posts: Allows the creation of new posts with a title, content, and images.
+## Key Features
+# Create Posts: Allows the creation of new posts with a title, content, and images.
 
 Read Posts: Can read a specific post by its unique ID, with error handling for when the post is not found.
 
