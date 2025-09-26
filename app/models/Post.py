@@ -10,6 +10,12 @@ class PostBase(BaseModel):
 
 class PostCreate(PostBase):
     pass
+
+class PostUpdate(BaseModel):
+    title: str | None = None
+    content: str | None = None
+    images: List[str] | None = None
+
 class Post(PostBase):
     id: uuid.UUID
     created_at: datetime.datetime = datetime.datetime.now()
