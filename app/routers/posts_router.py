@@ -8,7 +8,6 @@ router = APIRouter(
     prefix="/posts",
     tags=["posts"]
 )
-repo = PostRepository()
 
 # For Unit tests. If we won't use it like this, it will hard to test this class functionality,
 # without the actual REPO connection to DB.
@@ -31,10 +30,9 @@ async def create_post_route(
 async def get_posts_route(
         limit: Optional[int] = 10,
         cursor: Optional[str] = None,
-        repo: PostRepository = Depends(get_repository)  # הזרקת תלות
+        repo: PostRepository = Depends(get_repository)  # dependency injection
 ):
     # 1. Get all sorted posts from the repository
-    # קוראים למתודה מהאובייקט 'repo'
     sorted_posts = repo.get_all_posts()
     nextPageIdx = 0
 

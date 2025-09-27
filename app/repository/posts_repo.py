@@ -1,7 +1,7 @@
 import uuid
 import datetime
 from typing import Dict, List, Optional
-from app.models.post import Post, PostCreate, PostUpdate
+from app.models.Post import Post, PostCreate, PostUpdate
 
 # Mock In-Memory Database
 posts: Dict[uuid.UUID, Post] = {}
