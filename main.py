@@ -1,7 +1,8 @@
 import time
 from fastapi import FastAPI, Request
-from app.routers import posts # Import the router module
 
+from app.routers import users_router
+from app.routers.posts_router import router as posts_router
 app = FastAPI(
     title="Modular Blog API",
     description="A professional, modular API using FastAPI and Pydantic.",
@@ -19,8 +20,10 @@ async def add_process_time_header(request: Request, call_next):
     return response
 
 # Include the posts router
-app.include_router(posts.router)
+app.include_router(posts_router)
+app.include_router(users_router)
 
 @app.get("/", tags=["root"])
 async def root():
     return {"message": "Welcome to the Modular Blog API! Check out /docs for endpoints."}
+
